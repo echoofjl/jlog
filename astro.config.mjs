@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://echoofjl.github.io',
-    base: '/jlog'
+    site: 'https://echoofjl.github.io/jlog',
+    base: '/jlog',
 });
