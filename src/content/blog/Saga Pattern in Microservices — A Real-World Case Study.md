@@ -1,3 +1,9 @@
+---
+title: 'Saga Pattern in Microservices — A Real-World Case Study'
+description: Learn by making msitakes.
+pubDate: 2025-04-21
+---
+
 ## What This Blog Answers
 
 In this post, I’m sharing insights and lessons learned from implementing the **Saga Pattern** in a real-world microservices scenario. This blog is driven by practical challenges I faced when building a distributed order duplication flow where:
