@@ -1,13 +1,14 @@
 ---
-title: "How I Learned to Design Order Status in Microservices Without Creating a Mess"
-description: "Designing order workflows in microservices can get messy with over 20 statuses to manage. Learn how I used event-driven choreography, state patterns, and reusable components to simplify the process."
+title: "Order Status Design in Microservices: Tips & Tricks"
+description: "Designing order workflows in microservices can get messy with over 20 statuses to manage. "
 pubDate: 2025-04-22
-# tags:
-#   - Microservices
-#   - Event-Driven Architecture
-#   - Design Patterns
-#   - Software Engineering
-
+tags:
+    - event-driven architecture
+    - Microservices
+    - service decoupling
+    - software architecture
+    - state pattern
+    - strategy pattern
 ---
 
 
