@@ -1,21 +1,52 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../utils/consts';
-import RecentPosts from '../components/RecentPosts.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../utils/consts";
+import RecentPosts from "../components/RecentPosts.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-		<RecentPosts/>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="intro-section">
+        <h1>Hi, Welcome to My Blog</h1>
+        <p>
+
+        </p>
+      </section>
+      <RecentPosts />
+    </main>
+  </body>
 </html>
+
+<style>
+  main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  /* Introduction Section */
+  .intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .intro p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+</style>

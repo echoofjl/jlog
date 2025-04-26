@@ -3,49 +3,63 @@ import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
 const recentPosts = posts
-  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()) // 按日期降序排序
-  .slice(0, 5); 
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+  .slice(0, 5);
 ---
 
 <section class="recent-posts">
   <h2>Recent Blog Posts</h2>
-  <ul>
+  <div class="post-cards">
     {recentPosts.map((post) => (
-      <li>
-        <a href={`/blog/${post.id}`}>{post.data.title}</a>
+      <a href={`/blog/${post.id}`} class="post-card">
+        <h3>{post.data.title}</h3>
         <p>{post.data.description}</p>
-        <small>Published on {new Date(post.data.pubDate).toLocaleDateString()}</small>
-      </li>
+        <small>{new Date(post.data.pubDate).toLocaleDateString()}</small>
+      </a>
     ))}
-  </ul>
+  </div>
 </section>
 
 <style>
-    .recent-posts {
-      margin: 2rem 0;
-    }
-  
-    .recent-posts h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-  
-    .recent-posts ul {
-      list-style: none;
-      padding: 0;
-    }
-  
-    .recent-posts li {
-      margin-bottom: 1rem;
-    }
-  
-    .recent-posts a {
-      font-weight: bold;
-      text-decoration: none;
-      color: #007acc;
-    }
-  
-    .recent-posts a:hover {
-      text-decoration: underline;
-    }
-  </style>
+.recent-posts {
+  margin-top: 2rem;
+}
+
+.recent-posts h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.post-card {
+  padding: 1rem; /* Make cards a bit lighter */
+  border-radius: 0.5rem;
+  background: #fafafa;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.post-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.post-card h3 {
+  font-size: 1.25rem;
+}
+
+.post-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 0 1rem;
+}
+
+.post-card small {
+  font-size: 0.875rem;
+  color: #888;
+}
+</style>
