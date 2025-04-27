@@ -8,14 +8,16 @@ const { title, posts } = Astro.props;
 
 <section class="blog-item">
   <h2>{title}</h2>
-  <div class="post-cards">
+  <ul class="post-list">
     {posts.map((post) => (
-      <a href={`${import.meta.env.BASE_URL}/blog/${post.id}/`} class="post-card">
-        <div class="post-title">{post.data.title}</div>
-        <div class="post-date">{new Date(post.data.pubDate).toLocaleDateString()}</div>
-      </a>
+      <li class="post-list-item">
+        <a href={`${import.meta.env.BASE_URL}/blog/${post.id}/`} class="post-link">
+          <span class="post-title">{post.data.title}</span>
+          <span class="post-date">{new Date(post.data.pubDate).toLocaleDateString()}</span>
+        </a>
+      </li>
     ))}
-  </div>
+  </ul>
 </section>
 
 <style>
@@ -29,39 +31,46 @@ const { title, posts } = Astro.props;
     text-align: center;
   }
 
-  .post-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsive cards */
-    gap: 1.5rem;
-  }
-
-  .post-card {
+  .post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 1.5rem;
-    background: #f9f9f9;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    text-decoration: none; 
-    color: inherit; 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 0.5rem;
   }
 
-  .post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  .post-list-item {
+    border-bottom: 1px solid #eee;
+  }
+
+  .post-link {
+    display: flex;
+    justify-content: space-between; /* 🔥 title and date push to far left and right */
+    align-items: center;
+    padding: 0.75rem 1rem;
+    text-decoration: none; /* 🔥 remove underline */
+    color: inherit; /* 🔥 no blue */
+    transition: background-color 0.2s;
+  }
+
+  .post-link:hover {
+    background-color: #f5f5f5;
   }
 
   .post-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .post-date {
     font-size: 0.9rem;
     color: var(--gray, #666);
-    margin-top: auto; 
+    margin-left: 1rem;
+    flex-shrink: 0; /* 🔥 prevent date from squeezing */
+    white-space: nowrap;
   }
 </style>
