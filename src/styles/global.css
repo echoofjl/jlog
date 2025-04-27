@@ -19,7 +19,7 @@
 	background: linear-gradient(var(--gray-gradient)) no-repeat;
 	background-size: 100% 400px;
 	color: rgb(var(--gray-dark));
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1.8;
 	word-wrap: break-word;
 	overflow-wrap: break-word;

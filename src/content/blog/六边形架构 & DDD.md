@@ -3,6 +3,7 @@ title: DDD & 六边形架构（Hexagonal Architecture)
 description: 听烂了的DDD的思考版
 pubDate: 2025-04-20
 tags: []
+category: "Development"
 ---
 
 ## 问题引入

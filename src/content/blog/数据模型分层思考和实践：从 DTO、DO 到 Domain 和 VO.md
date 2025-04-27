@@ -2,6 +2,7 @@
 title: 数据模型分层思考和实践：从 DTO、DO 到 Domain 和 VO
 description: 第n遍关于数据模型的总结和思考
 pubDate: 2025-04-20
+category: "Development"
 ---
 
 ## 问题引入

@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../utils/consts";
 import RecentPosts from "../components/RecentPosts.astro";
 import IntroSection from "../components/IntroSection.astro";
+import MyProjects from "../components/MyProjects.astro";
 ---
 
 <!doctype html>
@@ -16,8 +17,8 @@ import IntroSection from "../components/IntroSection.astro";
     <main>
       <IntroSection />
       <RecentPosts />
+      <MyProjects />
     </main>
-
   </body>
 </html>
 
@@ -27,23 +28,5 @@ import IntroSection from "../components/IntroSection.astro";
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 1rem;
-  }
-
-  /* Introduction Section */
-  .intro {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .intro h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .intro p {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 700px;
-    margin: 0 auto;
   }
 </style>

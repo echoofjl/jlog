@@ -9,6 +9,7 @@ tags:
     - software architecture
     - state pattern
     - strategy pattern
+category: "Development"
 ---
 
 

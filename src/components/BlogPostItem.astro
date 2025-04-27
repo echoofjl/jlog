@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+  posts: Array<{ id: string; data: { title: string; pubDate: Date } }>;
+}
+const { title, posts } = Astro.props;
+---
+
+<section class="blog-item">
+  <h2>{title}</h2>
+  <div class="post-cards">
+    {posts.map((post) => (
+      <a href={`${import.meta.env.BASE_URL}/blog/${post.id}/`} class="post-card">
+        <div class="post-title">{post.data.title}</div>
+        <div class="post-date">{new Date(post.data.pubDate).toLocaleDateString()}</div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .blog-item {
+    margin-bottom: 3rem;
+  }
+
+  .blog-item h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .post-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsive cards */
+    gap: 1.5rem;
+  }
+
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-decoration: none; 
+    color: inherit; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-date {
+    font-size: 0.9rem;
+    color: var(--gray, #666);
+    margin-top: auto; 
+  }
+</style>

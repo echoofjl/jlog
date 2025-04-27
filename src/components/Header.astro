@@ -1,6 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../utils/consts';
+import { SITE_TITLE, GITHUB_REPO } from '../utils/consts';
 ---
 
 <header>
@@ -12,7 +12,7 @@ import { SITE_TITLE } from '../utils/consts';
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
 		<div class="social-links">
-			<a href="https://github.com/echoofjl" target="_blank">
+			<a href={GITHUB_REPO} target="_blank">
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
 						fill="currentColor"

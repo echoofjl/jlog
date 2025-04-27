@@ -2,6 +2,7 @@
 title: 'Saga Pattern in Microservices — A Real-World Case Study'
 description: Learn by making msitakes.
 pubDate: 2025-04-21
+category: "Development"
 ---
 
 ## What This Blog Answers

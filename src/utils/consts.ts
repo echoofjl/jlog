@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = 'JLog';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const GITHUB_REPO = 'https://github.com/echoofjl';
