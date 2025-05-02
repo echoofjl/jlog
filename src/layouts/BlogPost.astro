@@ -90,10 +90,20 @@ const { title, description, pubDate, updatedDate } = Astro.props;
   }
 
   .container {
-    max-width: 1200px;
-    padding: 2rem 1rem 4rem;
-    margin: 0 auto;
+  max-width: 100%;
+  width: 1200px;
+  padding: 2rem 1rem 4rem;
+  margin: 0 auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 1rem;
   }
+}
 
   .post-header {
     margin-bottom: 2rem;
