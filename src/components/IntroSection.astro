@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <section class="intro-section">
@@ -11,47 +12,20 @@
     text-align: center;
     margin-bottom: 3rem;
   }
-
-  .intro-section h2 {
-    font-size: 1.8rem; 
-    margin-bottom: 1rem;
-    font-weight: 700;
-    color: #333;
-  }
-
-
-  .intro-section p {
-    font-size: 1.3rem; 
-    color: #555;
-    line-height: 1.4;
-    min-height: 2rem;
-    font-weight: 500;
-    transition: color 0.5s ease;
-  }
-
-  .highlight {
-    color: var(--accent-color, #3b82f6);
-    transition: color 0.5s ease;
-  }
-
-  @media (min-width: 768px) {
-    .intro-section {
-      padding: 3rem 1rem 1rem; 
-    }
   }
 </style>
 
 <script is:inline>
   const words = [
-    { text: "Developer.", color: "#3b82f6" }, 
-    { text: "Reader.", color: "#10b981" },    
-    { text: "Explorer.", color: "#f59e0b" },  
-    { text: "Lifelong Learner.", color: "#ef4444" }   
+    { text: "Developer.", color: "#3b82f6" },
+    { text: "Reader.", color: "#10b981" },
+    { text: "Explorer.", color: "#f59e0b" },
+    { text: "Lifelong Learner.", color: "#ef4444" },
   ];
 
   let index = 0;
-  const dynamicText = document.getElementById('dynamic-text');
-  const highlight = dynamicText.querySelector('.highlight');
+  const dynamicText = document.getElementById("dynamic-text");
+  const highlight = dynamicText.querySelector(".highlight");
 
   function updateWord() {
     if (!highlight) return;

@@ -1,5 +1,5 @@
 ---
-import { GITHUB_REPO } from '../utils/consts';
+import { GITHUB_REPO } from "../utils/consts";
 const projects = [
   { name: "My Frontend learning notes", repoName: "frontend-bootcamp" },
   { name: "Project Two", repoName: "project-two" },
@@ -10,11 +10,18 @@ const projects = [
 <section class="my-projects">
   <h2>My Projects</h2>
   <div class="project-list">
-    {projects.map((project) => (
-      <a href={`${GITHUB_REPO}/${project.repoName}`} target="_blank" rel="noopener noreferrer" class="project-item">
-        {project.name}
-      </a>
-    ))}
+    {
+      projects.map((project) => (
+        <a
+          href={`${GITHUB_REPO}/${project.repoName}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-item"
+        >
+          {project.name}
+        </a>
+      ))
+    }
   </div>
 </section>
 
@@ -22,11 +29,6 @@ const projects = [
   .my-projects {
     margin-top: 2rem;
     text-align: center;
-  }
-
-  .my-projects h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
   }
 
   .project-list {
@@ -39,8 +41,8 @@ const projects = [
   .project-item {
     display: inline-block;
     padding: 0.5rem 1rem;
+    color: var(--text);
     background-color: var(--accent);
-    color: white;
     text-decoration: none;
     border-radius: 0.5rem;
     font-size: 1rem;

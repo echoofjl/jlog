@@ -1,55 +1,48 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../utils/consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <section class="about-page">
-        <h1>About Me</h1>
-      
-        <p class="intro">
-          I believe that each of us comes here with only one true purpose: <strong>to become who we truly are.</strong><br/>
-          Every day, I seek to understand this answer.<br/><br/>
-          When I am happy, I know who I am.<br/>
-          When I am sad, I know who I am.<br/>
-          When I am alone, I know who I am.<br/>
-          When I am with others, I still know.<br/><br/>
-          Sometimes, the journey to find myself feels so authentic that I forget the very reason I started.<br/>
-          But deep down, I believe there is a principle that rules all beings in this world—<br/>
-          one that we can sense, but can never fully capture with words.
-        </p>
-      
-        <section class="section">
-          <h2>About This Site</h2>
-          <p>
-            This blog is where I share:
-            <ul>
-              <li>Technical notes, tutorials, and project learnings</li>
-              <li>Book notes, movie thoughts, and broader reflections</li>
-              <li>Things I find curious, challenging, or inspiring</li>
-            </ul>
-            It's a living archive of ideas — a space for both precision and exploration.
-          </p>
-        </section>
-      
-        <section class="section">
-          <h2>Elsewhere</h2>
-          <p>
-            <a href="#">GitHub</a> • <a href="mailto:ljanier@126.com">Email Me</a>
-          </p>
-        </section>
-      </section>
-    </main>
-  </body>
-</html>
+<BaseLayout>
+  <div class="about-page">
+    <h1>About Me</h1>
+
+    <p class="intro">
+      I believe that each of us comes here with only one true purpose: <strong
+        >to become who we truly are.</strong
+      ><br />
+      Every day, I seek to understand this answer.<br /><br />
+      When I am happy, I know who I am.<br />
+      When I am sad, I know who I am.<br />
+      When I am alone, I know who I am.<br />
+      When I am with others, I still know.<br /><br />
+      Sometimes, the journey to find myself feels so authentic that I forget the
+      very reason I started.<br />
+      But deep down, I believe there is a principle that rules all beings in this
+      world—<br />
+      one that we can sense, but can never fully capture with words.
+    </p>
+
+    <section class="section">
+      <h2>About This Site</h2>
+      <p>
+        This blog is where I share:
+        <ul>
+          <li>Technical notes, tutorials, and project learnings</li>
+          <li>Book notes, movie thoughts, and broader reflections</li>
+          <li>Things I find curious, challenging, or inspiring</li>
+        </ul>
+        It's a living archive of ideas — a space for both precision and exploration.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Elsewhere</h2>
+      <p>
+        <a href="#">GitHub</a> • <a href="mailto:ljanier@126.com">Email Me</a>
+      </p>
+    </section>
+  </div>
+</BaseLayout>
 
 <style>
   .about-page {
@@ -58,50 +51,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../utils/consts";
     padding: 4rem 1rem;
     font-family: var(--font-sans, system-ui, sans-serif);
   }
-  
+
   .about-page h1 {
-    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 2rem;
   }
-  
   .about-page .intro {
     font-size: 1.2rem;
-    color: #555;
+    color: var(--text-color);
     line-height: 1.8;
     margin-bottom: 3rem;
     text-align: center;
   }
 
-  
   .section {
     margin-bottom: 3rem;
   }
-  
-  .section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #222;
-  }
-  
-  .section p, .section ul {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #444;
-  }
-  
-  .section ul {
-    list-style: disc inside;
-    margin-top: 0.5rem;
-  }
-  
-  .section a {
-    color: var(--accent, #3b82f6);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .section a:hover {
-    text-decoration: underline;
-  }
-  </style>
+</style>

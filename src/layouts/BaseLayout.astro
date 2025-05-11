@@ -1,23 +1,20 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import IntroSection from "../components/IntroSection.astro";
-import MyProjects from "../components/MyProjects.astro";
-import RecentPosts from "../components/RecentPosts.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../utils/consts";
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
+
   <body>
-    <Header />
-    <main>
-      <IntroSection />
-      <RecentPosts />
-      <MyProjects />
-    </main>
+    <div class="container">
+      <Header />
+      <main>
+        <slot />
+      </main>
+    </div>
   </body>
 </html>

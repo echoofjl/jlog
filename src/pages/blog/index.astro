@@ -1,15 +1,17 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../utils/consts";
 import { getCollection } from "astro:content";
-import BlogPostItem from "../../components/BlogPostItem.astro";
+import BaseHead from "../../components/BaseHead.astro";
+import BlogListItem from "../../components/BlogListItem.astro";
+import Header from "../../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../utils/consts";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-const developmentPosts = posts.filter(post => post.data.category === 'Development');
-const thoughtsPosts = posts.filter(post => post.data.category === 'Thoughts');
+const developmentPosts = posts.filter(
+  (post) => post.data.category === "Development"
+);
+const thoughtsPosts = posts.filter((post) => post.data.category === "Thoughts");
 ---
 
 <!doctype html>
@@ -20,18 +22,10 @@ const thoughtsPosts = posts.filter(post => post.data.category === 'Thoughts');
   <body>
     <Header />
     <main>
-      <section class="blog-section">
-        <BlogPostItem title="Development" posts={developmentPosts} />
-        <BlogPostItem title="Thoughts" posts={thoughtsPosts} />
+      <section>
+        <BlogListItem title="Development" posts={developmentPosts} />
+        <BlogListItem title="Thoughts" posts={thoughtsPosts} />
       </section>
     </main>
   </body>
 </html>
-
-<style>
-  .blog-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-  </style>
