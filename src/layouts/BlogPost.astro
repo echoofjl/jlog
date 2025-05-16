@@ -62,80 +62,49 @@ const { title, description, pubDate, updatedDate } = Astro.props;
           }
         </div>
       </header>
-      <div class="content-layout">
-        <article class="post-content prose">
-          <slot />
-        </article>
-        <aside class="post-outline">
-          <nav id="toc"></nav>
-        </aside>
-      </div>
+
+      <nav id="toc" class="toc-inline">
+        <h2 class="toc-title">Table of Contents</h2>
+      </nav>
+
+      <article class="post-content prose">
+        <slot />
+      </article>
     </main>
   </body>
 </html>
 
 <style>
-  .container {
-    margin: 0 auto;
-    padding: 1rem;
-  }
-
-  .post-header {
+  .toc-inline {
     margin-bottom: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-    padding: 1rem 0;
-    background: none;
-    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
   }
 
-  .post-header h1.no-shadow {
-    font-size: 2.5rem;
-    font-weight: 700;
+  .toc-title {
+    font-size: 1.2rem;
+    font-weight: bold;
     margin-bottom: 0.5rem;
-    line-height: 1.3;
-    text-shadow: none !important;
+    color: var(--accent);
   }
 
-  .content-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 100%;
+  .toc-inline ul {
+    list-style: none;
+    padding-left: 0;
   }
 
-  .post-content {
-    flex: 3 1 0;
-    min-width: 0;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-wrap: break-word;
+  .toc-inline li {
+    margin-bottom: 0.5rem;
   }
 
-  .post-outline {
-    flex: 1 1 200px;
-    max-width: 300px;
-    position: sticky;
-    top: 6rem;
-    padding: 1rem;
-    border-left: 1px solid var(--accent);
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: var(--box-shadow);
-    border-radius: 8px;
+  .toc-inline a {
+    text-decoration: none;
+    color: var(--accent-secondary);
   }
 
-  @media (max-width: 768px) {
-    .content-layout {
-      flex-direction: column;
-    }
-
-    .post-outline {
-      position: relative;
-      top: auto;
-      max-width: 100%;
-      border-left: none;
-      border-top: 1px solid var(--accent);
-    }
+  .toc-inline a:hover {
+    text-decoration: underline;
   }
 </style>
