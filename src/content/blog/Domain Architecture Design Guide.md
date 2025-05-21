@@ -65,31 +65,31 @@ To answer key questions:
 
 ## 📦 Recommended Project Structure
 
-```
+```markdown
 order-service/
 ├── domain/
-│   ├── model/         # Entities, VOs, Aggregates
-│   ├── service/       # Domain services
-│   └── event/         # Domain events
+│ ├── model/ # Entities, VOs, Aggregates
+│ ├── service/ # Domain services
+│ └── event/ # Domain events
 │
 ├── application/
-│   ├── usecase/       # Use cases like CreateOrderUseCase
-│   ├── factory/       # Factories like OrderFactory
-│   └── port/
-│       ├── inbound/   # Controller interfaces (optional)
-│       └── outbound/  # Ports like OrderRepository, KafkaPublisher
+│ ├── usecase/ # Use cases like CreateOrderUseCase
+│ ├── factory/ # Factories like OrderFactory
+│ └── port/
+│ ├── inbound/ # Controller interfaces (optional)
+│ └── outbound/ # Ports like OrderRepository, KafkaPublisher
 │
 ├── adapter/
-│   ├── inbound/
-│   │   ├── api/       # Controllers
-│   │   └── kafka/     # Kafka consumers
-│   └── outbound/
-│       ├── messaging/ # KafkaPublisherImpl
-│       └── persistence/ # JpaOrderRepository
+│ ├── inbound/
+│ │ ├── api/ # Controllers
+│ │ └── kafka/ # Kafka consumers
+│ └── outbound/
+│ ├── messaging/ # KafkaPublisherImpl
+│ └── persistence/ # JpaOrderRepository
 │
 ├── infra/
-│   ├── config/        # KafkaConfig, JpaConfig, etc.
-│   └── shared/        # EnvConfig, ClockProvider, UUIDGenerator
+│ ├── config/ # KafkaConfig, JpaConfig, etc.
+│ └── shared/ # EnvConfig, ClockProvider, UUIDGenerator
 ```
 
 ---

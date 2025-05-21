@@ -34,23 +34,17 @@ const projects = [
   .project-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 
   .project-item {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    color: var(--text);
-    background-color: var(--accent);
-    text-decoration: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.2s ease;
   }
 
   .project-item:hover {
-    background-color: var(--accent-dark);
+    color: var(--text);
   }
 </style>
