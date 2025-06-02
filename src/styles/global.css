@@ -92,12 +92,14 @@ ul {
 
 ul li {
   margin-bottom: 0.5rem;
+  text-align: left;
 }
 
 .section {
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 img {
